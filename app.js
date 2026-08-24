@@ -52,7 +52,7 @@ const fmt = (n) => {
   if (n >= 1e3) return (n/1e3).toFixed(2).replace(/\.00$/,"") + "K";
   return n.toLocaleString();
 };
-const esc = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'''}[c]));
+const esc = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const slugify = (s) => String(s).toLowerCase().trim().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
 
 function formatDate(d) {
